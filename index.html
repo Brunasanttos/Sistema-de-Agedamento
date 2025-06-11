@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Horários | Barbearia Blade Studio</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <div class="booking-container">
+        <div class="booking-form-side">
+            <header>
+                <h1>Blade Studio</h1>
+                <p>Onde o estilo encontra a precisão.</p>
+            </header>
+
+            <form id="booking-form">
+                <div class="form-step active" id="step-1">
+                    <h2><span class="step-number">1</span>Qual serviço você deseja?</h2>
+                    <div class="service-options">
+                        </div>
+                </div>
+
+                <div class="form-step" id="step-2">
+                    <h2><span class="step-number">2</span>Escolha a data e o horário</h2>
+                    <div class="form-group">
+                        <label for="date">Selecione uma data:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Horários disponíveis:</label>
+                        <div id="time-slots-container" class="time-slots-container">
+                            <p class="placeholder-text">Selecione uma data para ver os horários.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-step" id="step-3">
+                    <h2><span class="step-number">3</span>Seus dados para contato</h2>
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Como podemos te chamar?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Para enviarmos a confirmação" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="phone">WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button type="button" class="prev-btn" style="display: none;">Voltar</button>
+                    <button type="button" class="next-btn">Avançar</button>
+                    <button type="submit" class="submit-btn" style="display: none;">Finalizar Agendamento</button>
+                </div>
+            </form>
+        </div>
+        <div class="booking-image-side">
+            <div class="summary">
+                <h3>Resumo do seu Agendamento</h3>
+                <div id="summary-content">
+                    <p><i data-feather="scissors"></i><strong>Serviço:</strong> <span id="summary-service">--</span></p>
+                    <p><i data-feather="calendar"></i><strong>Data:</strong> <span id="summary-date">--</span></p>
+                    <p><i data-feather="clock"></i><strong>Horário:</strong> <span id="summary-time">--</span></p>
+                    <p><i data-feather="dollar-sign"></i><strong>Preço:</strong> <span id="summary-price">R$ --</span></p>
+                </div>
+                <div class="brand-signature">
+                    The Golden Cut
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="confirmation-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i data-feather="check-circle"></i>
+            </div>
+            <h2>Agendamento Confirmado!</h2>
+            <p>Seu horário foi reservado com sucesso. Enviamos uma confirmação para o seu e-mail.</p>
+            <p><strong>Nos vemos em breve!</strong></p>
+            <button id="close-modal-btn">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
